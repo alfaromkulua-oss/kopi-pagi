@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f6f1e9" />
+  <meta name="description" content="Kopi Pagi — kopi lokal, diseduh segar setiap hari." />
+  <title>Kopi Pagi — Teman Pagi yang Baik</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#beranda" aria-label="Kopi Pagi, beranda"><span class="brand-mark">kp.</span><span>KOPI PAGI<small>KOPI LOKAL, CERITA HARIAN</small></span></a>
+    <button class="menu-toggle" aria-label="Buka menu" aria-expanded="false">☰</button>
+    <nav class="nav-links" aria-label="Navigasi utama"><a href="#cerita">Cerita</a><a href="#menu">Menu</a><a href="#kopi">Tentang kopi</a><a href="#pembayaran">Pembayaran</a><a class="nav-cta" href="#menu">Pesan kopi <span>↗</span></a></nav>
+  </header>
+  <main>
+    <section class="hero" id="beranda">
+      <div class="hero-copy"><p class="eyebrow"><i></i> KOPI SEGAR • DARI PETANI LOKAL</p><h1>Awali hari<br />dengan <em>yang baik.</em></h1><p class="hero-text">Secangkir kopi yang dibuat dengan hati, dari biji pilihan Nusantara. Teman kecil untuk memulai hari besar.</p><div class="hero-actions"><a class="button button-dark" href="#menu">Lihat menu <span>↓</span></a><span class="open-note"><i></i> Buka setiap hari, 07.00–21.00</span></div><div class="hero-rating"><div class="avatar-stack"><span>☕</span><span>✿</span><span>☺</span></div><p><b>4.9/5</b><br /><small>disukai tetangga sekitar</small></p></div></div>
+      <div class="hero-photo"><img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1500&q=85" alt="Barista menyeduh kopi dengan metode manual brew" /><div class="photo-label"><span>01 / 03</span><b>Ritual pagi, rasa yang tinggal.</b></div><div class="round-stamp">ROASTED<br />WITH<br /><b>♡</b><br />CARE</div></div>
+      <div class="hero-bottom"><span>01 — KOPI DARI HATI</span><span>SCROLL UNTUK MENJELAJAH <b>↓</b></span></div>
+    </section>
+    <section class="intro section-wrap" id="cerita"><div class="intro-photo"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=85" alt="Secangkir kopi dan biji kopi di atas meja" /><span class="photo-caption">DIBUAT SEGAR, SETIAP CANGKIR.</span></div><div class="intro-copy"><p class="eyebrow">CERITA KAMI</p><h2>Bukan sekadar kopi.<br /><em>Ini waktu untukmu.</em></h2><p>Kami percaya hal baik tak harus rumit. Biji kopi dari kebun pilihan Indonesia, disangrai dalam batch kecil, lalu diseduh satu per satu oleh barista kami.</p><p>Singgah sebentar, tarik napas, nikmati harimu. Meja kami selalu punya tempat untukmu.</p><a class="text-link" href="#menu">Temukan favoritmu <span>↗</span></a></div></section>
+    <section class="menu-section" id="menu"><div class="section-wrap"><div class="section-heading"><div><p class="eyebrow">DARI BAR KAMI</p><h2>Teman baik <em>setiap hari.</em></h2></div><span class="menu-note">Diseduh saat kamu pesan.<br />Mulai dari Rp18.000.</span></div><div class="product-grid" id="product-grid"></div></div></section>
+    <section class="order-panel section-wrap"><div><p class="eyebrow">PESANANMU</p><h2>Keranjang <span id="cart-count">(0)</span></h2><div id="cart-items" class="cart-items"><p class="empty-cart">Belum ada kopi. Pilih menu favoritmu dulu ☕</p></div></div><div class="checkout"><div class="total-line"><span>Total pesanan</span><b id="cart-total">Rp0</b></div><label for="payment-select">Pilih metode pembayaran</label><select id="payment-select"><option value="QRIS">QRIS — semua e-wallet & m-banking</option><option value="Transfer bank">Transfer bank — BCA / Mandiri / BRI</option><option value="Tunai">Tunai — bayar di kedai</option></select><button class="button button-dark checkout-button" id="checkout-button">Lanjut pesan <span>↗</span></button><p class="checkout-hint">Pesanan dicatat di perangkat ini. Pembayaran online belum terhubung.</p></div></section>
+    <section class="ledger" id="kopi"><div class="section-wrap ledger-wrap"><div class="ledger-heading"><div><p class="eyebrow">KENALI KOPIMU</p><h2>Catatan <em>tentang kopi.</em></h2><p class="ledger-desc">Setiap biji punya asal, karakter, dan cara seduh yang membuat rasanya berbeda.</p></div><div class="period-chip"><span></span> DARI NUSANTARA</div></div><div class="finance-grid"><article class="finance-card"><span class="finance-icon">01</span><p>Asal biji</p><strong>Indonesia</strong><small>Arabika dari dataran tinggi pilihan</small></article><article class="finance-card"><span class="finance-icon expense-icon">02</span><p>Proses sangrai</p><strong>Batch kecil</strong><small>Disangrai berkala untuk menjaga kesegaran</small></article><article class="finance-card balance-card"><span class="finance-icon">03</span><p>Karakter rasa</p><strong>Seimbang</strong><small>Aroma hangat, rasa manis, akhir yang lembut</small></article></div><div class="ledger-footer"><span>Diseduh segar setelah kamu memesan.</span><span>Temukan asal rasa di setiap cangkir ☕</span></div></div></section>
+    <section class="payment-section section-wrap" id="pembayaran"><div class="payment-copy"><p class="eyebrow">PEMBAYARAN MUDAH</p><h2>Bayar dengan<br /><em>cara favoritmu.</em></h2><p>Pilih saat checkout, lalu nikmati kopimu. Pembayaran digital saat ini ditampilkan sebagai informasi dan belum diproses otomatis.</p></div><div class="payment-methods"><article><span class="pay-icon qris">QR</span><div><b>QRIS</b><small>Scan dengan e-wallet atau m-banking</small></div><span class="arrow">↗</span></article><article><span class="pay-icon bank">↔</span><div><b>Transfer bank</b><small>BCA, Mandiri, BRI, dan bank lainnya</small></div><span class="arrow">↗</span></article><article><span class="pay-icon cash">Rp</span><div><b>Bayar di kedai</b><small>Tunai atau kartu saat mengambil pesanan</small></div><span class="arrow">↗</span></article></div></section>
+    <section class="visit"><img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1800&q=85" alt="Suasana hangat di dalam kedai kopi" /><div class="visit-overlay"><p class="eyebrow">KAMI MENUNGGUMU</p><h2>Ketemu di <em>Kopi Pagi.</em></h2><p>Jl. Cerita No. 12, Jakarta Selatan<br />Setiap hari • 07.00–21.00</p><a href="#menu" class="button button-light">Pesan secangkir <span>↗</span></a></div></section>
+  </main>
+  <footer><a class="brand" href="#beranda"><span class="brand-mark">kp.</span><span>KOPI PAGI<small>KOPI LOKAL, CERITA HARIAN</small></span></a><span>Diseduh dengan hati di Jakarta.</span><a href="#beranda">Kembali ke atas ↑</a></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>

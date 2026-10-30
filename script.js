@@ -1,0 +1,16 @@
+const products=[
+ {id:'kopi-susu',name:'Kopi Susu Pagi',price:22000,desc:'Espresso, susu segar, gula aren.',tag:'FAVORIT',img:'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80'},
+ {id:'cappuccino',name:'Cappuccino',price:25000,desc:'Espresso dengan foam lembut.',tag:'KLASIK',img:'https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=800&q=80'},
+ {id:'manual-brew',name:'Manual Brew',price:28000,desc:'Biji pilihan, seduh perlahan.',tag:'SINGLE ORIGIN',img:'https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=800&q=80'},
+ {id:'matcha',name:'Matcha Latte',price:26000,desc:'Matcha lembut, susu creamy.',tag:'NON-KOPI',img:'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=800&q=80'}
+];
+const rupiah=n=>'Rp'+Number(n).toLocaleString('id-ID');
+let cart={};
+const productGrid=document.querySelector('#product-grid');
+productGrid.innerHTML=products.map(p=>`<article class="product-card"><div class="product-image"><img src="${p.img}" alt="${p.name}" loading="lazy"><span class="product-tag">${p.tag}</span></div><div class="product-info"><div class="product-title"><h3>${p.name}</h3><b>${rupiah(p.price)}</b></div><p>${p.desc}</p><button class="add-button" data-id="${p.id}">+ Tambah ke pesanan</button></div></article>`).join('');
+function renderCart(){const rows=Object.entries(cart).filter(([,q])=>q>0);document.querySelector('#cart-count').textContent=`(${rows.reduce((n,[,q])=>n+q,0)})`;document.querySelector('#cart-total').textContent=rupiah(rows.reduce((n,[id,q])=>n+products.find(p=>p.id===id).price*q,0));document.querySelector('#cart-items').innerHTML=rows.length?rows.map(([id,q])=>{const p=products.find(x=>x.id===id);return `<div class="cart-row"><span><b>${p.name}</b> <small>× ${q}</small></span><span>${rupiah(p.price*q)} <button class="remove-item" data-id="${id}" aria-label="Hapus ${p.name}">×</button></span></div>`}).join(''):'<p class="empty-cart">Belum ada kopi. Pilih menu favoritmu dulu ☕</p>';document.querySelectorAll('.remove-item').forEach(b=>b.onclick=()=>{delete cart[b.dataset.id];renderCart()})}
+productGrid.addEventListener('click',e=>{const b=e.target.closest('.add-button');if(!b)return;cart[b.dataset.id]=(cart[b.dataset.id]||0)+1;renderCart();toast('Ditambahkan ke keranjang ☕')});
+document.querySelector('#checkout-button').addEventListener('click',()=>{const total=Object.entries(cart).reduce((n,[id,q])=>n+products.find(p=>p.id===id).price*q,0);if(!total){toast('Pilih kopi dulu sebelum memesan ☕');return}const method=document.querySelector('#payment-select').value;cart={};renderCart();toast(`Pesanan dicatat • ${method} • ${rupiah(total)}`)});
+let toastTimer;function toast(message){const t=document.querySelector('#toast');t.textContent=message;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2800)}
+const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('.nav-links');toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',open);toggle.textContent=open?'×':'☰'});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰'}));
+renderCart();
